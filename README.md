@@ -60,3 +60,23 @@ A response from the kernel might look like:
 
 Achieving practical performance and consistency with a model‑driven OS presents challenges around latency, state management, cost, and security. The protocol is intentionally simple to enable experimentation with these issues while keeping the renderer lightweight.
 
+
+## Reference implementation
+
+A small command-line prototype demonstrates the MCP loop.
+It consists of three modules under the `mcp/` package:
+
+- `protocol.py` – definitions for request and response structures
+- `kernel.py` – a trivial kernel that generates example views
+- `shell.py` – an interactive renderer that prints UI trees and sends events
+
+### Running the demo
+
+```
+python -m mcp.shell
+```
+
+The shell prints a simple desktop containing a Documents icon.
+Enter the component id you wish to click (for example `desktop_icon_documents`).
+The shell sends an MCP request to the kernel and renders the
+returned view description.
