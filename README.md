@@ -80,3 +80,5 @@ The shell prints a simple desktop containing a Documents icon.
 Enter the component id you wish to click (for example `desktop_icon_documents`).
 The shell sends an MCP request to the kernel and renders the
 returned view description.
+=======
+
